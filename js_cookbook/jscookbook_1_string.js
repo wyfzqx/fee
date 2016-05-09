@@ -134,24 +134,3 @@ function str_1_11() {
   document.getElementById("result").innerHTML = oldStr;
   //Sometimes,We need to padding value before display it
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function low() {
-
-}
