@@ -121,6 +121,20 @@ function str_1_10() {
   document.write('"' + "  neat  ".trim() + '"');
 }
 
+//1.11 Left- or Right-Padding a String
+function str_1_11() {
+  //padding with spaces
+  var prefLineLength = 20;
+  var oldStr = "This is a string";
+  var diff = prefLineLength - oldStr.length;
+  var filler = '&nbsp;';
+  for (var i = 0; i < diff; i++) {
+    oldStr = filler + oldStr;
+  }
+  document.getElementById("result").innerHTML = oldStr;
+  //Sometimes,We need to padding value before display it
+}
+
 
 
 
