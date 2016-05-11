@@ -25,9 +25,47 @@ function reg_2_1() {
 
   var i = 0,
     len = cookbookString.length;
-  //use test method
+  //use RegExp test method
   for(; i < len; i++){
     alert(cookbookString[i] + " " + pattern.test(cookbookString[i]));
   }
   //1, 3 true; 2, 4 false
+}
+
+//2.2(☆☆☆) Testing for Case-Insensitive Substring Matches
+function reg_2_2() {
+  //use regular expression flag(i), ignores case
+  var pattern1 = /Cook.*Book/i;
+  var pattern2 = new RegExp("Cook.*Book", "i");
+  //g:Global match:matches across entire string, rather than stopping at first match
+  //m:Applies begin and end line special characters(^ and $, respectively) to each
+  //  line in a multiline string
+}
+
+//2.3(☆☆) Validating a Social Security number
+function reg_2_3() {
+  var ssn = document.getElementById("pattern").value;
+  var pattern = /\d{3}-?\d{2}-?\d{4}/;
+  //use String match method
+  //equal with pattern.test(ssn)
+  if (ssn.match(pattern)) {
+    alert("true");
+  }else{
+    alert("false");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function paddingbottom() {
+
 }
