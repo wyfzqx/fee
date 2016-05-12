@@ -55,7 +55,41 @@ function reg_2_3() {
   }
 }
 
+//2.4(☆☆☆☆) Finding and Highlighting All Instances Of a Pattern
+//regexp exec method，即使在模式中设置了全局标志(g)，它每次也只会返回一个匹配项。其中：
+//index: the index of the located match
+//input: the original input string
+//[0] or accessing array directly
+//The matched value
+//[1],...,[n]
+//Parenthetical substring matches
+function reg_2_4() {
+  var searchString = "Now is the time and this is the time and that is the time";
+  var pattern = /t\w*e/g;
+  var matchArray = null,
+    first = 0,
+    last = 0;
+  var resString = "";
 
+  while((matchArray = pattern.exec(searchString)) != null){
+    last = matchArray.index;
+    resString += searchString.substring(first, last);
+    resString += "<span class=highlight>" + matchArray[0] + "</span>";
+    first = pattern.lastIndex;
+  }
+  // finish off string
+  resString += searchString.substring(first,searchString.length);
+  return resString;
+}
+
+//2.5(☆) Replacing Patterns with New Strings
+//use String method replace
+function reg_2_5() {
+  var searchString = "Now is the time, this is the time";
+  var re = /t\w{2}e/g;
+  var replacement = searchString.replace(re, "place");
+  alert(replacement);     //"Now is the place, this is the place";
+}
 
 
 
